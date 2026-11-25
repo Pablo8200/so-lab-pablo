@@ -1,0 +1,3 @@
+# /etc/wsl.conf   (dentro de Ubuntu en WSL2)  -> necesario para ejecutar Docker Engine (docker-ce) como servicio
+[boot]
+systemd=true

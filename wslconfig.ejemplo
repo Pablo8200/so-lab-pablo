@@ -1,0 +1,13 @@
+# C:\Users\<Usuario>\.wslconfig   (solo si se usa Windows + WSL2)
+# Aplica a TODA la VM de WSL2 (un unico kernel compartido por todas las distros).
+# Tras editarlo, en PowerShell:  wsl --shutdown   y volver a abrir Ubuntu.
+# Comentarios siempre en lineas propias (no al final de un valor).
+[wsl2]
+# Techo global de RAM de la VM (por defecto: 50 % de la RAM fisica)
+memory=6GB
+# vCPU visibles en Linux (por defecto: todos los procesadores logicos)
+processors=4
+# Sin swap global: el OOM ocurre exactamente en el limite calculado
+swap=0
+# Solo si 'stat -fc %T /sys/fs/cgroup' NO devuelve cgroup2fs, descomentar:
+# kernelCommandLine = cgroup_no_v1=all
