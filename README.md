@@ -1,6 +1,4 @@
-Aquí tienes el contenido del `README.md` actualizado con los nombres exactos de tus archivos dentro de `evidencias/p1/` (`entorno-hardware.png`, `descompresion-kit.png`, `compose-ps.png`, `variables.png`, `compose.png`) y `evidencias/p2/` (`namespaces.png`, `Cgroups-limites.png`, `calculos.png`), respetando mayúsculas/minúsculas tal como aparecen en Dolphin.
 
-```markdown
 # Laboratorio SO — Kernel Linux detrás de los contenedores
 
 Universidad Tecnológica de Pereira · Tecnología en Desarrollo de Software
