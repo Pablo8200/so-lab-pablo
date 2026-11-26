@@ -113,13 +113,12 @@ docker compose up -d --build --force-recreate order-api
 
 ## 5. Diagrama de red
 
-*(Puente de red observado en la prueba: `br-c714c4c37537`)*
+*(Puente de red observado en la prueba: `br-c714c4c37537`)* 
 
 ## 6. Resultados y comparación (Prácticas 3 a 6)
 
 * [Salida de calculos.py](https://www.google.com/search?q=fase1/salida-calculos.txt)
 * [Salida de descriptores (Práctica 5)](https://www.google.com/search?q=salidas/p5-fd.txt)
-* [Cuestionario de la Fase 1](https://www.google.com/search?q=fase1/cuestionario.md)
 
 | Prueba | Predicho | Medido | Observación |
 | --- | --- | --- | --- |
