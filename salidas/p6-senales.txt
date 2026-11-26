@@ -1,0 +1,2 @@
+P6 A (SIGTERM): real=___ ExitCode=0
+P6 B (SIGKILL): real=___ ExitCode=137

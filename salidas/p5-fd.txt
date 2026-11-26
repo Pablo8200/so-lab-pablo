@@ -1,0 +1,24 @@
+fds=106 hilos=2 rss=33796 kB limite_nofile=256
+N=50: fds=104 sock8080=50 sock6379=50 redis_clients=51
+N=100: fds=204 sock8080=100 sock6379=100 redis_clients=101
+N=150: fds=256 sock8080=148 sock6379=125 redis_clients=126
+order-api-1  | [INICIO] Escuchando en :8080 | PID en el namespace: 1 | LEAK_MB=15 CPU_ITER=10000000
+order-api-1  | [INICIO] Escuchando en :8080 | PID en el namespace: 1 | LEAK_MB=15 CPU_ITER=10000000
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [ERROR] /slow: Error 24 connecting to redis:6379. No file descriptors available.
+order-api-1  | [ERROR] /slow: Error 24 connecting to redis:6379. No file descriptors available.
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [ERROR] /slow: Error 24 connecting to redis:6379. No file descriptors available.
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
+order-api-1  | [KERNEL] accept() falló: [Errno 24] No file descriptors available
