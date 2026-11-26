@@ -1,0 +1,12 @@
+=== PRÁCTICA 2: NAMESPACES, CGROUPS Y CÁLCULOS ===
+Proceso analizado: order-api (PID 8404 en el host / PID 1 dentro del namespace en NSpid)
+Namespaces: identificadores aislados respecto al namespace de la terminal del host
+Límites de cgroup v2 aplicados al contenedor:
+- cpu.max: 25000 100000 (0.25 núcleos por ventana de 100 ms)
+- memory.max: 75497472 (72 MiB)
+- memory.swap.max: 0 (sin swap)
+- pids.max: 300
+Medición base (calculos.py --medir):
+- Memoria base: ~23.9 MiB
+- Descriptores base: 5
+Nota: El volcado completo de calculos.py se encuentra en fase1/salida-calculos.txt.

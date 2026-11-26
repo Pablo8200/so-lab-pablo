@@ -1,0 +1,13 @@
+=== PRÁCTICA 1: ENTORNO Y LEVANTAMIENTO DEL LABORATORIO ===
+Equipo: ASUS Vivobook 16 | Usuario/Host: pablo@MONO | Directorio: ~/Documentos/lab-so
+Sistema operativo: CachyOS (Linux nativo, sin WSL2)
+Kernel: 7.3.4-1-cachyos
+Sistema de archivos: btrfs en / | Storage driver: overlayfs
+Cgroups: cgroup2fs (cgroups v2, driver systemd)
+Núcleos lógicos (nproc): 12 (Intel Core i5-13420H)
+Memoria RAM: 15608 MiB (free -m) / 15 GiB (free -h) sobre 16 GB físicos (15.24 GiB utilizables)
+Swap / zram: 15 GiB en el equipo (/dev/zram0 15.2 G) / 0 en límites de memoria del contenedor
+Límite de archivos (ulimit -n): 1024 en terminal / 256 en order-api
+Servicios levantados: gateway (nginx/1.30.8, puerto 8000), order-api (python:3.11-alpine), redis
+Verificación HTTP (curl localhost:8000/): responde con contador incremental (visita=4, visita=5) y pid_ns=1
+Nota: Salida consolidada a partir de evidencias y métricas registradas en la práctica (no volcado bruto línea por línea).

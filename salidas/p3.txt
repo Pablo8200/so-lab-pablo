@@ -1,0 +1,45 @@
+=== PRÁCTICA 3: CPU LIMITADA (THROTTLING) ===
+$ PID=$(docker inspect -f '{{.State.Pid}}' labso-order-api-1)
+$ CG=/sys/fs/cgroup$(cut -d: -f3 /proc/$PID/cgroup)
+$ BR=br-$(docker network inspect -f '{{.Id}}' labso_default | cut -c1-12)
+$ echo "PID=$PID"; echo "CG=$CG"; echo "BR=$BR"
+PID=8404
+CG=/sys/fs/cgroup/system.slice/docker-fcc18d5e87aa0b14f52bc42138e01c2f69b103cb800dda12e685f16287ff8e3e.scope
+BR=br-c714c4c37537
+
+$ cat $CG/cpu.stat
+usage_usec 2768925
+user_usec 2290022
+system_usec 478903
+nice_usec 0
+core_sched.force_idle_usec 0
+nr_periods 3626
+nr_throttled 34
+throttled_usec 2441587
+nr_bursts 0
+burst_usec 0
+
+$ curl localhost:8000/cpu
+cpu_s=1.657 wall_s=6.539 ratio_wall/cpu=3.95
+
+$ seq 2 | xargs -P2 -I{} curl -s localhost:8000/cpu
+cpu_s=1.591 wall_s=12.688 ratio_wall/cpu=7.98
+cpu_s=1.606 wall_s=12.776 ratio_wall/cpu=7.96
+
+$ cat $CG/cpu.stat
+usage_usec 7680495
+user_usec 7201592
+system_usec 478903
+nice_usec 0
+core_sched.force_idle_usec 0
+nr_periods 3904
+nr_throttled 228
+throttled_usec 17584443
+nr_bursts 0
+burst_usec 0
+
+Resumen Práctica 3:
+- 1 petición a /cpu: ratio_wall/cpu = 3.95
+- 2 peticiones simultáneas a /cpu: ratio_wall/cpu = 7.98 y 7.96
+- nr_throttled: de 34 a 228 (+194)
+- throttled_usec: de 2441587 a 17584443 (+15142856 us)
