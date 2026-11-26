@@ -9,7 +9,7 @@ Universidad Tecnológica de Pereira · Tecnología en Desarrollo de Software
 - **Nombre:** Juan Pablo Vélez García
 - **Usuario de GitHub:** Pablo8200
 
-## 2. Mi entorno (Tabla 1)
+## 2. Mi entorno (Tabla 1)  
 
 | Dato | Hardware físico | Lo que ve Linux / WSL2 |
 | :--- | :--- | :--- |
@@ -140,27 +140,5 @@ docker compose up -d --build --force-recreate order-api
 * **Subida a GitHub:** Al intentar hacer `push` me salió error de autenticación con contraseña y aviso de que `origin` ya existía; lo solucioné usando un token personal de GitHub con permiso de lectura y escritura en el contenido del repositorio.
 * **Memoria de ceros sin OOM en la Práctica 4:** El `bytearray` inicial de ceros no disparó el corte por memoria en mi kernel (`7.3.4-1-cachyos` con `transparent_hugepage=always`); lo resolví usando datos no nulos (`b"\x01"`) en `/ram` y recreando el contenedor con `--build --force-recreate`.
 * **Comandos en primer plano, rutas y carpetas (`salidas/`):** Ejecutar `docker events` junto a otros comandos sin separarlo o sin `&` bloqueaba los siguientes comandos, ejecutar fuera de la carpeta del lab impedía que `docker compose` encontrara el archivo, y correr `tee -a salidas/p5-fd.txt` antes de crear `salidas/` daba error de directorio inexistente; lo solucioné separando terminales/comandos, estando en la carpeta del proyecto y creando `salidas/` con `mkdir -p salidas`.
-
-```
-
-<Steps>
-  <Step subtitle="1 min" title="Copiar las capturas de error y solución de P4 a evidencias/p4/">
-    Asegúrate de tener en `evidencias/p4/` los archivos `error_p4.png`, `error_p4_2.png`, `error_p4_3.png`, `solucion_error_p4.png`, `evidencia_p4.png` y `evidencia_p4_2.png`[cite: 10, 11, 13, 14, 15, 16].
-    *Verification:* Los 6 nombres coinciden exactamente con las rutas de la sección `Práctica 4` del `README.md`.
-  </Step>
-  <Step subtitle="1 min" title="Guardar README.md y poner tu código estudiantil">
-    Reemplaza el contenido de `README.md` por el texto anterior y escribe tu código donde dice `[ESCRIBE AQUÍ TU CÓDIGO ESTUDIANTIL]`.
-    *Verification:* `README.md` contiene las 6 prácticas y no tiene marcadores pendientes.
-  </Step>
-  <Step subtitle="1 min" title="Subir los cambios a GitHub">
-    Ejecuta en la carpeta del repositorio:
-    ```bash
-    git add README.md evidencias/ salidas/ fase1/
-    git commit -m "Consolidar README y evidencias de Practicas 1 a 6"
-    git push
-    ```
-    *Verification:* `git push` termina sin errores y el `README.md` muestra todas las capturas en GitHub.
-  </Step>
-</Steps>
 
 ```
